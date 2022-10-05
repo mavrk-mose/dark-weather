@@ -9,7 +9,7 @@ function App() {
         
       </div>
       <div className="content">
-
+        <p>Seeing the weather of the whole world with Dark Weather!</p>
       </div>
       <div className="filters">
 
