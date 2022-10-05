@@ -29,7 +29,10 @@ h1 {
   line-height: 1.1;
 }
 h3{
-  font-size: 1em;
+  font-size: 1.9em;
+  position: absolute;
+  left: 331px;
+  right: 331px;
 }
 .card {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);

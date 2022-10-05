@@ -6,10 +6,16 @@ function App() {
   return (
     <div className="home">
       <div className="navbar">
-        
+        <h2>Dark Weather</h2>
+        <ul>
+          <li>Home</li>
+          <li>Download app</li>
+          <li>Contact us</li>
+        </ul>
+        <button>Sign up</button>
       </div>
       <div className="content">
-        <p>Seeing the weather of the whole world with Dark Weather!</p>
+        <h3>Seeing the weather of the whole world with Dark Weather!</h3>
       </div>
       <div className="filters">
 
