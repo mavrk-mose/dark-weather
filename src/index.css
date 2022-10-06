@@ -161,16 +161,16 @@ input{
 }
 .weather-icon-1{
   position: absolute;
-  width: 232.07px;
-  height: 232.07px;
-  left: 70px;
-  top: 0px;
+  width: 345.07px;
+  height: 295.07px;
+  left: 95px;
+  top: -64px;
 }
 .weather-icon-2{
   position: absolute;
-  width: 232.07px;
-  height: 232.07px;
-  left: 559.93px;
+  width: 202.07px;
+  height: 202.07px;
+  left: 580.93px;
   top: 0px;
 }
 .weather-icon-3{
