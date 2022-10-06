@@ -1,14 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 :root {
-  font-family: 'Poppins', sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
-
+  box-sizing: border-box;
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color:#1B262C;
-  ;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -18,7 +13,11 @@
 }
 
 body {
-  
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
   min-width: 320px;
   min-height: 100vh;
 }
@@ -28,8 +27,10 @@ body {
   position: relative;
 }
 h3{
-  font-size: 1.9em;
-  position: absolute;
+  font-weight: 300px;
+  font-size: 40px;
+  line-height:65px;
+  text-align: center;
   left: 331px;
   right: 331px;
 }
@@ -60,6 +61,13 @@ h3{
   height: 547.46px;
   left: 85px;
   top: 547px;
+}
+li{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  row-gap: 50px;
 }
 
 
