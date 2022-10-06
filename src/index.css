@@ -120,11 +120,11 @@ button{
   left: 85px;
   top: 421px;
 }
-.search-box{
+input{
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  padding: 10px 190px 10px 30px;
+  padding: 10px 50px 10px 30px;
 
   width: 80px;
   height: 50px;
