@@ -53,7 +53,18 @@ h3{
 }
 
 .container {
-  padding: 2px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 2px;
+
+  position: relative;
+  top: 200px;
+  left: 52px;
+  right: 52px;
+  bottom: 20px;
 }
 .cards{
   display: flex;
@@ -125,23 +136,15 @@ input{
   flex-direction: row;
   align-items: flex-start;
   padding: 10px 50px 10px 30px;
-
+  color: #FFFF;
   width: 80px;
-  height: 50px;
+  height: 35px;
 
   background: #24343D;
   box-shadow: inset 10px 10px 30px rgba(36, 52, 61, 0.6);
   border-radius: 12px;
 }
-/* input[type=text]{
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 200;
-  font-size: 23px;
-  width: auto;
-  text-align: center;
-  color: #FFFFFF;
-} */
+
 .filter-box{
   display: flex;
   flex-direction: row;
@@ -155,4 +158,25 @@ input{
 
   background: #24343D;
   border-radius: 12px;
+}
+.weather-icon-1{
+  position: absolute;
+  width: 232.07px;
+  height: 232.07px;
+  left: 70px;
+  top: 0px;
+}
+.weather-icon-2{
+  position: absolute;
+  width: 232.07px;
+  height: 232.07px;
+  left: 559.93px;
+  top: 0px;
+}
+.weather-icon-3{
+  position: absolute;
+  width: 232.07px;
+  height: 232.07px;
+  left: 1014px;
+  top: 0px;
 }
