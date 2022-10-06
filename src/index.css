@@ -26,6 +26,10 @@ body {
   height: 100%;
   position: relative;
 }
+h2{
+  width: 281px;
+  height: 60px;
+}
 h3{
   font-weight: 300px;
   font-size: 40px;
@@ -62,12 +66,38 @@ h3{
   left: 85px;
   top: 547px;
 }
+ul{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items:center;
+  gap: 50px;
+}
 li{
+  display:inline;
+}
+button{
+  font-size: 20px;
+  width: 135px;
+  height: 60px;
+
+  background: linear-gradient(108.5deg, #3A5E72 4.95%, #5C93B1 132.43%);
+  box-shadow: inset 7px 7px 10px rgba(79, 136, 167, 0.3);
+  border-radius: 20px;
+}
+.navbar{
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  row-gap: 50px;
+  padding: 0px;
+  gap: 168px;
 }
-
+.content{
+  position: absolute;
+  width: 778px;
+  height: 130px;
+  left: 331px;
+  top: 216px;
+}
 
