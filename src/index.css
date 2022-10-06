@@ -133,6 +133,7 @@ li{
 
 button{
   font-size: 20px;
+  color: #FFFFFF;
   width: 135px;
   height: 60px;
 
@@ -189,7 +190,9 @@ input{
   box-shadow: inset 10px 10px 30px rgba(36, 52, 61, 0.6);
   border-radius: 12px;
 }
-
+::placeholder{
+  color: #f8f8f8;
+}
 .filter-box{
   display: flex;
   flex-direction: row;
