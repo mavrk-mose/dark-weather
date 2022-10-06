@@ -76,7 +76,7 @@ ul{
 }
 li{
   display:inline;
-  font-size: 25px;
+  font-size: 20px;
 }
 button{
   font-size: 20px;
@@ -94,6 +94,11 @@ button{
   align-items: center;
   padding: 0px;
   gap: 168px;
+  position: absolute;
+  width: 1277px;
+  height: 78px;
+  left: 80px;
+  top: 51px;
 }
 .content{
   position: absolute;
