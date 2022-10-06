@@ -29,6 +29,7 @@ body {
 h2{
   width: 281px;
   height: 60px;
+  font-size: 40px;
 }
 h3{
   font-weight: 300px;
@@ -75,6 +76,7 @@ ul{
 }
 li{
   display:inline;
+  font-size: 25px;
 }
 button{
   font-size: 20px;
