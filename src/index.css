@@ -17,16 +17,14 @@
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
+  
   min-width: 320px;
   min-height: 100vh;
 }
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.home{
+  width: 100%;
+  height: 100%;
+  position: relative;
 }
 h3{
   font-size: 1.9em;
@@ -39,6 +37,7 @@ h3{
   transition: 0.3s;
   width: 327px;
   height: 486px;
+  background: #24353E;
 }
 
 .card:hover {
@@ -54,7 +53,6 @@ h3{
   align-items:center;
   gap: 100px;
 
-  background: #24353E;
   position:absolute;
   width: 1272.42px;
   height: 547.46px;
