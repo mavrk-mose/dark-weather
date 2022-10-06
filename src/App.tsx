@@ -1,8 +1,9 @@
 import pcloudy from './assets/pcloudy.svg';
 import sunny from './assets/sun.svg';
 import rainy from './assets/Tshower.svg';
+import logo from './assets/logo.svg'
 function App() {
-  
+
   return (
     <div className="app">
     <div className="container">
@@ -16,7 +17,7 @@ function App() {
         <button>Sign up</button>
       </div>
       <div className="content">
-        <h3>Seeing the weather of the whole world with Dark Weather!</h3>
+        <h3>Seeing the weather of the whole world with <img src={logo} alt="logo"/></h3>
       </div>
       <div className="filters">
         <div className="search-box">
