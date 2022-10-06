@@ -2,11 +2,13 @@ import pcloudy from './assets/pcloudy.svg';
 import sunny from './assets/sun.svg';
 import rainy from './assets/Tshower.svg';
 import logo from './assets/logo.svg'
+
+//const url = 'https://api.openweathermap.org/data/3.0/onecall?q={city name}&appid=93de778a8de80994ecaaee49126e92e9';
 function App() {
 
   return (
+  <div className="container">
     <div className="app">
-    <div className="container">
       <div className="navbar">
         <h2>Dark Weather</h2>
         <ul>
@@ -17,7 +19,7 @@ function App() {
         <button>Sign up</button>
       </div>
       <div className="content">
-        <h3>Seeing the weather of the whole world with <img src={logo} alt="logo"/></h3>
+        <h3>Seeing the weather of the whole world with Dark Weather!</h3>
       </div>
       <div className="filters">
         <div className="search-box">
@@ -34,7 +36,7 @@ function App() {
         <div className="card">
           <img src={pcloudy} className="weather-icon-1" alt="pcloudy" />
             <div className="info-card">
-              <p>Dar Es Salaam 35ºC</p>
+              <h4>Dar Es Salaam 35ºC</h4>
               <ul>windspeed : 11km</ul>
               <ul>Tuesday : 19:52</ul>
               <ul>Cloudy</ul>
@@ -43,7 +45,7 @@ function App() {
         <div className="card">
         <img src={sunny} className="weather-icon-2" alt="sunny" />
           <div className="info-card">
-              <p>Arusha 14ºC</p>
+              <h4>Arusha 14ºC</h4>
               <ul>windspeed : 5km</ul>
               <ul>Tuesday : 19:52</ul>
               <ul>Sunny</ul>
@@ -52,7 +54,7 @@ function App() {
         <div className="card">
         <img src={rainy} className="weather-icon-3" alt="rainy" />
           <div className="info-card">
-              <p>Njombe 11ºC</p>
+              <h4>Njombe 11ºC</h4>
               <ul>windspeed : 23km</ul>
               <ul>Tuesday : 19:52</ul>
               <ul>Rainy</ul>
@@ -60,7 +62,7 @@ function App() {
         </div>
       </div>
     </div>
-    </div>
+  </div>
   )
 }
 

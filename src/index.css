@@ -30,7 +30,16 @@ h3{
   left: 331px;
   right: 331px;
 }
-
+h4{
+  width: 251px;
+  height: 65px;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 65px;
+}
+.logo{
+  display: inline-block;
+}
 .app{
   position: relative;
   width: 100%;
@@ -41,7 +50,7 @@ h3{
   content: '';
   background: url('./assets/background.jpeg') no-repeat center center/cover;
   position: absolute;
-  width: 100%;
+  width: 120%;
   height: 180%;
   top: 0;
   left: 0;
@@ -70,7 +79,7 @@ h3{
   top: 0px;
 }
 .card {
-  background: #24353E; 
+  background-color: rgba(36, 53, 62, 0.4); 
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   width: 327px;
@@ -96,6 +105,7 @@ h3{
   right: 52px;
   bottom: 20px;
 }
+
 .cards{
   display: flex;
   flex-direction: row;
@@ -108,16 +118,19 @@ h3{
   left: 85px;
   top: 547px;
 }
+
 ul{
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   gap: 50px;
 }
+
 li{
   display:inline;
   font-size: 20px;
 }
+
 button{
   font-size: 20px;
   width: 135px;
@@ -127,6 +140,7 @@ button{
   box-shadow: inset 7px 7px 10px rgba(79, 136, 167, 0.3);
   border-radius: 20px;
 }
+
 .navbar{
   display: flex;
   flex-direction: row;
@@ -151,7 +165,7 @@ button{
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   padding: 0px;
   gap: 182px;
 
