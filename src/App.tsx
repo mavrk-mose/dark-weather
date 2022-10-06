@@ -37,7 +37,7 @@ function App() {
           <img src={pcloudy} className="weather-icon-1" alt="pcloudy" />
             <div className="info-card">
               <h4>Dar Es Salaam 35ºC</h4>
-              <ul>windspeed : 11km</ul>
+              <ul>windspeed : 11km/h</ul>
               <ul>Tuesday : 19:52</ul>
               <ul>Cloudy</ul>
             </div>
@@ -46,7 +46,7 @@ function App() {
         <img src={sunny} className="weather-icon-2" alt="sunny" />
           <div className="info-card">
               <h4>Arusha 14ºC</h4>
-              <ul>windspeed : 5km</ul>
+              <ul>windspeed : 5km/h</ul>
               <ul>Tuesday : 19:52</ul>
               <ul>Sunny</ul>
           </div>
@@ -55,7 +55,7 @@ function App() {
         <img src={rainy} className="weather-icon-3" alt="rainy" />
           <div className="info-card">
               <h4>Njombe 11ºC</h4>
-              <ul>windspeed : 23km</ul>
+              <ul>windspeed : 23km/h</ul>
               <ul>Tuesday : 19:52</ul>
               <ul>Rainy</ul>
           </div>
