@@ -18,12 +18,20 @@ function App() {
         <h3>Seeing the weather of the whole world with Dark Weather!</h3>
       </div>
       <div className="filters">
-
+        <div className="search-box">
+            <input type="text" placeholder='Search Here'/>
+        </div>
+        <div className="filter-box">
+                    <p>filters</p>
+            <input type="text" placeholder='Coldest'/>
+            <input type="text" placeholder='10ºC - 20ºC'/>
+            <input type="text" placeholder='Rainy'/>
+        </div>
       </div>
       <div className="cards">
         <div className="card">
             <div className="container">
-              <p>Dar Es Salaam</p>
+              <p>Dar Es Salaam 35ºC</p>
               <ul>windspeed</ul>
               <ul>Tuesday : 19:52</ul>
               <ul>Cloudy</ul>
@@ -31,7 +39,7 @@ function App() {
         </div>
         <div className="card">
           <div className="container">
-              <p>Arusha</p>
+              <p>Arusha 14ºC</p>
               <ul>windspeed</ul>
               <ul>Tuesday : 19:52</ul>
               <ul>Cloudy</ul>
@@ -39,7 +47,7 @@ function App() {
         </div>
         <div className="card">
           <div className="container">
-              <p>Njombe</p>
+              <p>Njombe 11ºC</p>
               <ul>windspeed</ul>
               <ul>Tuesday : 19:52</ul>
               <ul>Cloudy</ul>
