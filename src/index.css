@@ -39,12 +39,34 @@ h3{
   left: 331px;
   right: 331px;
 }
+
+.weather-icon-1{
+  position: absolute;
+  width: 345.07px;
+  height: 295.07px;
+  left: 95px;
+  top: -64px;
+}
+.weather-icon-2{
+  position: absolute;
+  width: 190.07px;
+  height: 190.07px;
+  left: 580.93px;
+  top: 0px;
+}
+.weather-icon-3{
+  position: absolute;
+  width: 232.07px;
+  height: 232.07px;
+  left: 1014px;
+  top: 0px;
+}
 .card {
+  background: #24353E; 
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   width: 327px;
   height: 486px;
-  background: #24353E;
   border-radius: 20px;
 }
 
@@ -158,25 +180,4 @@ input{
 
   background: #24343D;
   border-radius: 12px;
-}
-.weather-icon-1{
-  position: absolute;
-  width: 345.07px;
-  height: 295.07px;
-  left: 95px;
-  top: -64px;
-}
-.weather-icon-2{
-  position: absolute;
-  width: 190.07px;
-  height: 190.07px;
-  left: 580.93px;
-  top: 0px;
-}
-.weather-icon-3{
-  position: absolute;
-  width: 232.07px;
-  height: 232.07px;
-  left: 1014px;
-  top: 0px;
 }
