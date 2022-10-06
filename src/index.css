@@ -1,15 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
-:root {
-  
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color:#1B262C;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -18,13 +11,11 @@ body {
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
-  min-width: 320px;
-  min-height: 100vh;
-}
-.home{
-  position: relative;
-  max-width: 1440px;
-  max-height: 1148px;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
 }
 h2{
   width: 281px;
@@ -38,6 +29,23 @@ h3{
   text-align: center;
   left: 331px;
   right: 331px;
+}
+
+.app{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  color: #FFFF;
+}
+.app:before{
+  content: '';
+  background: url('./assets/background.jpeg') no-repeat center center/cover;
+  position: absolute;
+  width: 100%;
+  height: 180%;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 
 .weather-icon-1{
@@ -74,7 +82,7 @@ h3{
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
-.container {
+.info-card {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -153,12 +161,13 @@ button{
   left: 85px;
   top: 421px;
 }
+
 input{
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   padding: 10px 50px 10px 30px;
-  color: #FFFF;
+  color: #FFFFFF;
   width: 80px;
   height: 35px;
 

@@ -4,7 +4,8 @@ import rainy from './assets/Tshower.svg';
 function App() {
   
   return (
-    <div className="home">
+    <div className="app">
+    <div className="container">
       <div className="navbar">
         <h2>Dark Weather</h2>
         <ul>
@@ -31,7 +32,7 @@ function App() {
       <div className="cards">
         <div className="card">
           <img src={pcloudy} className="weather-icon-1" alt="pcloudy" />
-            <div className="container">
+            <div className="info-card">
               <p>Dar Es Salaam 35ºC</p>
               <ul>windspeed : 11km</ul>
               <ul>Tuesday : 19:52</ul>
@@ -40,7 +41,7 @@ function App() {
         </div>
         <div className="card">
         <img src={sunny} className="weather-icon-2" alt="sunny" />
-          <div className="container">
+          <div className="info-card">
               <p>Arusha 14ºC</p>
               <ul>windspeed : 5km</ul>
               <ul>Tuesday : 19:52</ul>
@@ -49,7 +50,7 @@ function App() {
         </div>
         <div className="card">
         <img src={rainy} className="weather-icon-3" alt="rainy" />
-          <div className="container">
+          <div className="info-card">
               <p>Njombe 11ºC</p>
               <ul>windspeed : 23km</ul>
               <ul>Tuesday : 19:52</ul>
@@ -57,6 +58,7 @@ function App() {
           </div>
         </div>
       </div>
+    </div>
     </div>
   )
 }
