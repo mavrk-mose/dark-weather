@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import pcloudy from './assets/pcloudy.svg';
 import sunny from './assets/sun.svg';
 import rainy from './assets/Tshower.svg';
-import moment from 'moment';
+import moment, { HTML5_FMT } from 'moment';
 
 function App() {
 
@@ -10,7 +10,7 @@ function App() {
 
   useEffect(() => {
     const fetchData =async function (){
-      await fetch(`https://api.openweathermap.org/data/2.5/weather?q=Njombe&appid=93de778a8de80994ecaaee49126e92e9&units=metric`)
+      await fetch(`https://api.openweathermap.org/data/2.5/weather?q=Arusha&appid=93de778a8de80994ecaaee49126e92e9&units=metric`)
       .then(res => res.json())
       .then(result => {
         setData(result)
@@ -51,36 +51,36 @@ function App() {
           <img src={pcloudy} className="weather-icon-1" alt="pcloudy" />
             <div className="info-card">
               <div className="name-temp">
-              <h4>Dar Es Salaam </h4>
-              <h5></h5>
+              <h4>{data.name}</h4>
+              {data.main ? <h5>{data.main.temp}ºC</h5> : null}
               </div>
-              <ul>windspeed : </ul>
+              {data.wind ? <ul>windspeed : {data.wind.speed}km/h</ul> : null}
               <ul>{moment().format('dddd')}: {moment().format('HH:mm')}</ul>
-              <ul>Cloudy</ul>
+              {data.weather ? <ul>{data.weather[0].main}</ul> : null}
             </div>
         </div>
         <div className="card">
         <img src={sunny} className="weather-icon-2" alt="sunny" />
           <div className="info-card">
           <div className="name-temp">
-              <h4>Arusha </h4>
-              <h5></h5>
+              <h4>{data.name}</h4>
+              {data.main ? <h5>{data.main.temp}ºC</h5> : null}
               </div>
-              <ul>windspeed : 5km/h</ul>
+              {data.wind ? <ul>windspeed : {data.wind.speed}km/h</ul> : null}
               <ul>{moment().format('dddd')}: {moment().format('HH:mm')}</ul>
-              <ul>Sunny</ul>
+              {data.weather ? <ul>{data.weather[0].main}</ul> : null}     
           </div>
         </div>
         <div className="card">
         <img src={rainy} className="weather-icon-3" alt="rainy" />
           <div className="info-card">
           <div className="name-temp">
-              <h4>Njombe </h4>
-              <h5>35ºC</h5>
+              <h4>{data.name}</h4>
+              {data.main ? <h5>{data.main.temp}ºC</h5> : null}
               </div>
-              <ul>windspeed : 23km/h</ul>
+              {data.wind ? <ul>windspeed : {data.wind.speed}km/h</ul> : null}
               <ul>{moment().format('dddd')}: {moment().format('HH:mm')}</ul>
-              <ul>Rainy</ul>
+              {data.weather ? <ul>{data.weather[0].main}</ul> : null}
           </div>
         </div>
       </div>
