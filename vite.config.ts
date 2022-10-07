@@ -5,5 +5,3 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()]
 })
-// @ts-ignore
-const s: string = 123
