@@ -67,13 +67,25 @@ function App() {
         </div>
         <div className="filter-box">
             <p>Filters</p>
-            <input type="text" placeholder='Coldest'/>
-            <input type="text" placeholder='10ºC - 20ºC'/>
-            <input type="text" placeholder='Rainy'/>
+            <select className="dropdown" id="dropdown">
+                <option value="value1">Coldest</option>
+                <option value="value1">Hottest</option>
+                <option value="value1">Humid</option>
+            </select>
+            <select className="dropdown" id="dropdown">
+                <option value="value1">10ºC-20ºC</option>
+                <option value="value1">0ºC-10ºC</option>
+                <option value="value1">20ºC-30ºC</option>
+            </select>
+            <select className="dropdown" id="dropdown">
+                <option value="value1">Rainy</option>
+                <option value="value1">Sunny</option>
+                <option value="value1">Clear</option>
+            </select>
         </div>
       </div>
       <div className="cards">
-        <div className="card">
+        <div className="col-sm">
           <img src={pcloudy} className="weather-icon-1" alt="pcloudy" />
             <div className="info-card">
               <div className="name-temp">
@@ -85,7 +97,7 @@ function App() {
               {data.weather ? <ul>{data.weather[0].main}</ul> : null}
             </div>
         </div>
-        <div className="card">
+        <div className="col-sm">
         <img src={sunny} className="weather-icon-2" alt="sunny" />
           <div className="info-card">
           <div className="name-temp">
@@ -97,7 +109,7 @@ function App() {
               {data1.weather ? <ul>{data1.weather[0].main}</ul> : null}     
           </div>
         </div>
-        <div className="card">
+        <div className="col-sm">
         <img src={rainy} className="weather-icon-3" alt="rainy" />
           <div className="info-card">
           <div className="name-temp">
