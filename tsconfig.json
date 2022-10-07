@@ -19,9 +19,7 @@
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }],
   "rules": {
-    "@typescript-eslint/ban-ts-comment": [
-      "error",
-      {"ts-ignore": "allow-with-description"},
-    ],
+    "@typescript-eslint/ban-ts-ignore": "off"
   },
+
 }
