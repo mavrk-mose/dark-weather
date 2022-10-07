@@ -55,7 +55,7 @@ function App() {
               <h5></h5>
               </div>
               <ul>windspeed : </ul>
-              <ul>{moment().format('dddd')}: {moment().format('LL')}</ul>
+              <ul>{moment().format('dddd')}: {moment().format('HH:mm')}</ul>
               <ul>Cloudy</ul>
             </div>
         </div>
@@ -67,7 +67,7 @@ function App() {
               <h5></h5>
               </div>
               <ul>windspeed : 5km/h</ul>
-              <ul>{moment().format('dddd')}: {moment().format('LL')}</ul>
+              <ul>{moment().format('dddd')}: {moment().format('HH:mm')}</ul>
               <ul>Sunny</ul>
           </div>
         </div>
@@ -79,7 +79,7 @@ function App() {
               <h5>35ºC</h5>
               </div>
               <ul>windspeed : 23km/h</ul>
-              <ul>{moment().format('dddd')}: {moment().format('LL')}</ul>
+              <ul>{moment().format('dddd')}: {moment().format('HH:mm')}</ul>
               <ul>Rainy</ul>
           </div>
         </div>
