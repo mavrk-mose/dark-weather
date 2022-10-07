@@ -6,9 +6,9 @@ import moment, { HTML5_FMT } from 'moment';
 
 function App() {
 
-  const [data, setData] = useState([]);
-  const [data1, setData1] = useState([]);
-  const [data2, setData2] = useState([]);
+  const [data, setData] = useState<any>('');
+  const [data1, setData1] = useState<any>('');
+  const [data2, setData2] = useState<any>('');
 
 //fetch data for Dar Es Salaam
   useEffect(() => {
