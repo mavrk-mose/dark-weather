@@ -15,7 +15,33 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+  
 }
+
+.container{ 
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  min-height: 100vh;
+  height: 100vh;
+  margin: 0 auto;
+  color: #FFFF;
+
+  display: flex;
+  flex-direction: row;
+  overflow-x: hidden;
+}
+.container:before{
+  content: '';
+  background: url('./assets/background.jpeg') no-repeat center center/cover;
+  position: absolute;
+  width: 120%;
+  flex:1 0 auto;
+  height: 180%;
+  top: 0;
+  left: 0;
+}
+
 h2{
   width: 281px;
   height: 60px;
@@ -42,25 +68,6 @@ h5{
   font-weight:100;
   font-size: 30px;
   line-height: 65px;
-}
-
-.container{ 
-  position: relative;
-  width: 100%;
-  max-width: 1440px;
-  min-height: 100vh;
-  height: 100vh;
-  margin: 0 auto;
-  color: #FFFF;
-}
-.container:before{
-  content: '';
-  background: url('./assets/background.jpeg') no-repeat center center/cover;
-  position: absolute;
-  width: 120%;
-  height: 180%;
-  top: 0;
-  left: 0;
 }
 
 .weather-icon-1{
@@ -120,7 +127,6 @@ h5{
 
   position:relative;
   width: 1172.42px;
-  min-width: 300px;
   height: 547.46px;
   left: 85px;
   top: 547px;
@@ -213,4 +219,16 @@ input, select{
 
   background: #24343D;
   border-radius: 12px;
+}
+/* tablet styles*/
+@media screen and (max-width: 1000px){
+  
+
+
+}
+/* phone styles*/
+@media screen and (max-width: 1000px){
+  
+
+  
 }

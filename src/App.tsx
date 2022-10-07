@@ -48,7 +48,6 @@ function App() {
   }, []);
   return (
   <div className="container">
-    
       <div className="navbar">
         <h2>Dark Weather</h2>
         <ul>
