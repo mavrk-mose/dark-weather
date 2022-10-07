@@ -1,10 +1,24 @@
+import { useEffect, useState } from "react";
 import pcloudy from './assets/pcloudy.svg';
 import sunny from './assets/sun.svg';
 import rainy from './assets/Tshower.svg';
-import logo from './assets/logo.svg'
+import moment from 'moment';
 
-//const url = 'https://api.openweathermap.org/data/3.0/onecall?q={city name}&appid=93de778a8de80994ecaaee49126e92e9';
 function App() {
+
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const fetchData =async function (){
+      await fetch(`https://api.openweathermap.org/data/2.5/weather?q=Njombe&appid=93de778a8de80994ecaaee49126e92e9&units=metric`)
+      .then(res => res.json())
+      .then(result => {
+        setData(result)
+        console.log(result);
+      });
+    } 
+    fetchData();
+  }, []);
 
   return (
   <div className="container">
@@ -16,7 +30,7 @@ function App() {
           <li>Download app</li>
           <li>Contact us</li>
         </ul>
-        <button>Sign up</button>
+        <button>Sign Up</button>
       </div>
       <div className="content">
         <h3>Seeing the weather of the whole world with Dark Weather!</h3>
@@ -36,27 +50,36 @@ function App() {
         <div className="card">
           <img src={pcloudy} className="weather-icon-1" alt="pcloudy" />
             <div className="info-card">
-              <h4>Dar Es Salaam 35ºC</h4>
-              <ul>windspeed : 11km/h</ul>
-              <ul>Tuesday : 19:52</ul>
+              <div className="name-temp">
+              <h4>Dar Es Salaam </h4>
+              <h5></h5>
+              </div>
+              <ul>windspeed : </ul>
+              <ul>{moment().format('dddd')}: {moment().format('LL')}</ul>
               <ul>Cloudy</ul>
             </div>
         </div>
         <div className="card">
         <img src={sunny} className="weather-icon-2" alt="sunny" />
           <div className="info-card">
-              <h4>Arusha 14ºC</h4>
+          <div className="name-temp">
+              <h4>Arusha </h4>
+              <h5></h5>
+              </div>
               <ul>windspeed : 5km/h</ul>
-              <ul>Tuesday : 19:52</ul>
+              <ul>{moment().format('dddd')}: {moment().format('LL')}</ul>
               <ul>Sunny</ul>
           </div>
         </div>
         <div className="card">
         <img src={rainy} className="weather-icon-3" alt="rainy" />
           <div className="info-card">
-              <h4>Njombe 11ºC</h4>
+          <div className="name-temp">
+              <h4>Njombe </h4>
+              <h5>35ºC</h5>
+              </div>
               <ul>windspeed : 23km/h</ul>
-              <ul>Tuesday : 19:52</ul>
+              <ul>{moment().format('dddd')}: {moment().format('LL')}</ul>
               <ul>Rainy</ul>
           </div>
         </div>
