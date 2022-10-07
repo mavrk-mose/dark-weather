@@ -48,7 +48,7 @@ function App() {
   }, []);
   return (
   <div className="container">
-    <div className="app">
+    
       <div className="navbar">
         <h2>Dark Weather</h2>
         <ul>
@@ -68,9 +68,9 @@ function App() {
         <div className="filter-box">
             <p>Filters</p>
             <select className="dropdown" id="dropdown">
-                <option value="value1">Coldest</option>
-                <option value="value1">Hottest</option>
                 <option value="value1">Humid</option>
+                <option value="value1">Hottest</option>
+                <option value="value1">Coldest</option>
             </select>
             <select className="dropdown" id="dropdown">
                 <option value="value1">10ºC-20ºC</option>
@@ -122,7 +122,6 @@ function App() {
           </div>
         </div>
       </div>
-    </div>
   </div>
   )
 }

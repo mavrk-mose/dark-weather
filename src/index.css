@@ -3,15 +3,13 @@
   font-family: 'Poppins', sans-serif;
   font-style: normal;
   font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 body {
-  
+  min-height: 100vh;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -39,18 +37,23 @@ h4{
   line-height: 65px;
 }
 h5{
+  width: 145px;
+  height: 50px;
+  font-weight:100;
+  font-size: 30px;
+  line-height: 65px;
+}
 
-}
-.logo{
-  display: inline-block;
-}
-.app{
+.container{ 
   position: relative;
   width: 100%;
+  max-width: 1440px;
+  min-height: 100vh;
   height: 100vh;
+  margin: 0 auto;
   color: #FFFF;
 }
-.app:before{
+.container:before{
   content: '';
   background: url('./assets/background.jpeg') no-repeat center center/cover;
   position: absolute;
@@ -58,7 +61,6 @@ h5{
   height: 180%;
   top: 0;
   left: 0;
-  z-index: -1;
 }
 
 .weather-icon-1{
@@ -117,7 +119,8 @@ h5{
   gap: 100px;
 
   position:relative;
-  width: 1272.42px;
+  width: 1172.42px;
+  min-width: 300px;
   height: 547.46px;
   left: 85px;
   top: 547px;
