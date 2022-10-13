@@ -84,7 +84,7 @@ function App() {
         </div>
       </div>
       <div className="cards">
-        <div className="col-sm">
+        <div className="card">
           <img src={pcloudy} className="weather-icon-1" alt="pcloudy" />
             <div className="info-card">
               <div className="name-temp">
@@ -96,7 +96,7 @@ function App() {
               {data.weather ? <ul>{data.weather[0].main}</ul> : null}
             </div>
         </div>
-        <div className="col-sm">
+        <div className="card">
         <img src={sunny} className="weather-icon-2" alt="sunny" />
           <div className="info-card">
           <div className="name-temp">
@@ -108,7 +108,7 @@ function App() {
               {data1.weather ? <ul>{data1.weather[0].main}</ul> : null}     
           </div>
         </div>
-        <div className="col-sm">
+        <div className="card">
         <img src={rainy} className="weather-icon-3" alt="rainy" />
           <div className="info-card">
           <div className="name-temp">
