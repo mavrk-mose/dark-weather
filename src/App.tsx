@@ -89,9 +89,9 @@ function App() {
             <div className="info-card">
               <div className="name-temp">
               <h4>{data.name}</h4>
-              {data.main ? <h5>{data.main.temp}ºC</h5> : null}
+              {data.main ? <h5>{Math.round(data.main.temp)}ºC</h5> : null}
               </div>
-              {data.wind ? <ul>windspeed : {data.wind.speed}km/h</ul> : null}
+              {data.wind ? <ul>windspeed : {Math.round(data.wind.speed)}km/h</ul> : null}
               <ul>{moment().format('dddd')}: {moment().format('HH:mm')}</ul>
               {data.weather ? <ul>{data.weather[0].main}</ul> : null}
             </div>
@@ -101,9 +101,9 @@ function App() {
           <div className="info-card">
           <div className="name-temp">
               <h4>{data1.name}</h4>
-              {data1.main ? <h5>{data1.main.temp}ºC</h5> : null}
+              {data1.main ? <h5>{Math.round(data1.main.temp)}ºC</h5> : null}
               </div>
-              {data1.wind ? <ul>windspeed : {data1.wind.speed}km/h</ul> : null}
+              {data1.wind ? <ul>windspeed : {Math.round(data1.wind.speed)}km/h</ul> : null}
               <ul>{moment().format('dddd')}: {moment().format('HH:mm')}</ul>
               {data1.weather ? <ul>{data1.weather[0].main}</ul> : null}     
           </div>
@@ -113,9 +113,9 @@ function App() {
           <div className="info-card">
           <div className="name-temp">
               <h4>{data2.name}</h4>
-              {data2.main ? <h5>{data2.main.temp}ºC</h5> : null}
+              {data2.main ? <h5>{Math.round(data2.main.temp)}ºC</h5> : null}
               </div>
-              {data2.wind ? <ul>windspeed : {data2.wind.speed}km/h</ul> : null}
+              {data2.wind ? <ul>windspeed : {Math.round(data2.wind.speed)}km/h</ul> : null}
               <ul>{moment().format('dddd')}: {moment().format('HH:mm')}</ul>
               {data2.weather ? <ul>{data2.weather[0].main}</ul> : null}
           </div>
