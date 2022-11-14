@@ -1,51 +1,26 @@
-import { useEffect, useState } from "react";
-import pcloudy from './assets/pcloudy.svg';
-import sunny from './assets/sun.svg';
-import rainy from './assets/Tshower.svg';
-import moment, { HTML5_FMT } from 'moment';
+import {useState, useEffect} from 'react';
+import Dar from "./components/Dar";
+import Njombe from "./components/Njombe";
+import Arusha from "./components/Arusha";
+import Pcloudy from '../assets/pcloudy.svg';
+import Rainy from '../assets/Tshower.svg';
+import Sunny from '../assets/sun.svg';
 
 function App() {
+  const [dataList, setDataList] = useState<any>([]);
 
-  const [data, setData] = useState<any>('');
-  const [data1, setData1] = useState<any>('');
-  const [data2, setData2] = useState<any>('');
-
-//fetch data for Dar Es Salaam
-  useEffect(() => {
-    const fetchData =async function (){
-      await fetch(`https://api.openweathermap.org/data/2.5/weather?q=Dar Es Salaam&appid=93de778a8de80994ecaaee49126e92e9&units=metric`)
-      .then(res => res.json())
-      .then(result => {
-        setData(result)
-        console.log(result);
-      });
-    } 
-    fetchData();
-  }, []);
-//fetch data for Arusha
-  useEffect(() => {
-    const fetchData =async function (){
-      await fetch(`https://api.openweathermap.org/data/2.5/weather?q=Arusha&appid=93de778a8de80994ecaaee49126e92e9&units=metric`)
-      .then(res => res.json())
-      .then(result => {
-        setData1(result)
-        console.log(result);
-      });
-    } 
-    fetchData();
-  }, []);
-//fetch data for Njombe
-  useEffect(() => {
-    const fetchData =async function (){
-      await fetch(`https://api.openweathermap.org/data/2.5/weather?q=Njombe&appid=93de778a8de80994ecaaee49126e92e9&units=metric`)
-      .then(res => res.json())
-      .then(result => {
-        setData2(result)
-        console.log(result);
-      });
-    } 
-    fetchData();
-  }, []);
+//fetch data from openweather
+useEffect(() => {
+  const fetchData =async function (){
+    await fetch(`https://api.openweathermap.org/data/2.5/group?id=161325,160263,151479&appid=93de778a8de80994ecaaee49126e92e9&units=metric`)
+    .then(res => res.json())
+    .then(result => {
+      setDataList(result)
+    });
+  } 
+  fetchData();
+}, []);
+console.log(dataList)
   return (
   <div className="container">
       <div className="navbar">
@@ -58,7 +33,7 @@ function App() {
         <button>Sign Up</button>
       </div>
       <div className="content">
-        <h3>Seeing the weather of the whole world with Dark Weather!</h3>
+        <h3>Seeing the weather of the whole world with <em>Dark Weather!</em></h3>
       </div>
       <div className="filters">
         <div className="search-box">
@@ -67,9 +42,9 @@ function App() {
         <div className="filter-box">
             <p>Filters</p>
             <select className="dropdown" id="dropdown">
+                <option value="value1">Coldest</option>
                 <option value="value1">Humid</option>
                 <option value="value1">Hottest</option>
-                <option value="value1">Coldest</option>
             </select>
             <select className="dropdown" id="dropdown">
                 <option value="value1">10ºC-20ºC</option>
@@ -84,42 +59,9 @@ function App() {
         </div>
       </div>
       <div className="cards">
-        <div className="card">
-          <img src={pcloudy} className="weather-icon-1" alt="pcloudy" />
-            <div className="info-card">
-              <div className="name-temp">
-              <h4>{data.name}</h4>
-              {data.main ? <h5>{data.main.temp}ºC</h5> : null}
-              </div>
-              {data.wind ? <ul>windspeed : {data.wind.speed}km/h</ul> : null}
-              <ul>{moment().format('dddd')}: {moment().format('HH:mm')}</ul>
-              {data.weather ? <ul>{data.weather[0].main}</ul> : null}
-            </div>
-        </div>
-        <div className="card">
-        <img src={sunny} className="weather-icon-2" alt="sunny" />
-          <div className="info-card">
-          <div className="name-temp">
-              <h4>{data1.name}</h4>
-              {data1.main ? <h5>{data1.main.temp}ºC</h5> : null}
-              </div>
-              {data1.wind ? <ul>windspeed : {data1.wind.speed}km/h</ul> : null}
-              <ul>{moment().format('dddd')}: {moment().format('HH:mm')}</ul>
-              {data1.weather ? <ul>{data1.weather[0].main}</ul> : null}     
-          </div>
-        </div>
-        <div className="card">
-        <img src={rainy} className="weather-icon-3" alt="rainy" />
-          <div className="info-card">
-          <div className="name-temp">
-              <h4>{data2.name}</h4>
-              {data2.main ? <h5>{data2.main.temp}ºC</h5> : null}
-              </div>
-              {data2.wind ? <ul>windspeed : {data2.wind.speed}km/h</ul> : null}
-              <ul>{moment().format('dddd')}: {moment().format('HH:mm')}</ul>
-              {data2.weather ? <ul>{data2.weather[0].main}</ul> : null}
-          </div>
-        </div>
+          <Dar />
+          <Arusha />
+          <Njombe />
       </div>
   </div>
   )
