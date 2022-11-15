@@ -8,12 +8,14 @@ function App() {
   <div className="container">
       <div className="navbar">
         <h2>Dark Weather</h2>
-        <ul>
-          <li>Home</li>
-          <li>Download app</li>
-          <li>Contact us</li>
-        </ul>
-        <button>Sign Up</button>
+        <div className="navi-bar">
+          <ul>
+            <li>Home</li>
+            <li>Download app</li>
+            <li>Contact us</li>
+          </ul>
+        </div>
+          <button>Sign Up</button>
       </div>
       <div className="content">
         <h3>Seeing the weather of the whole world with <em>Dark Weather!</em></h3>
