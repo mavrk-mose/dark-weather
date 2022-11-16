@@ -241,14 +241,18 @@ li{
   }
   .cards {
     flex-direction: row;
-    
+    height: 100vh;
+    margin-top: 10%;
   }
   .card {
     flex-direction: column;
   }
   .content {
     font-size: smaller;
+    width: auto;
     height: 40vh;
+
+    
   }
   .filters {
     flex-direction: column;
