@@ -3,9 +3,9 @@ import moment, { HTML5_FMT } from 'moment';
 import Pcloudy from '../assets/pcloudy.svg';
 import Rainy from '../assets/Tshower.svg';
 import Sunny from '../assets/sun.svg';
+
 function Arusha() {
   const [data, setData] = useState<any>([]);
-
 //fetch data from openweather
 useEffect(() => {
   const fetchData =async function (){

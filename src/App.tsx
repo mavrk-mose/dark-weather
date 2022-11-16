@@ -3,7 +3,6 @@ import Njombe from "./components/Njombe";
 import Arusha from "./components/Arusha";
 
 function App() {
-  
   return (
   <div className="container">
       <div className="navbar">
