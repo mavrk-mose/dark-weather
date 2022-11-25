@@ -17,7 +17,7 @@ useEffect(() => {
   } 
   fetchData();
 }, []);
-console.log(data)
+
   return (
         <div className="card">
 
