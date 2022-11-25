@@ -1,25 +1,29 @@
 import { useState, useEffect } from 'react';
-import moment, { HTML5_FMT } from 'moment';
+import moment from 'moment';
 import Pcloudy from '../assets/pcloudy.svg';
 import Rainy from '../assets/Tshower.svg';
 import Sunny from '../assets/sun.svg';
 
 function Arusha() {
   const [data, setData] = useState<any>([]);
-//fetch data from openweather
-useEffect(() => {
-  const fetchData =async function (){
-    await fetch(`https://api.openweathermap.org/data/2.5/weather?q=Arusha&appid=93de778a8de80994ecaaee49126e92e9&units=metric`)
-    .then(res => res.json())
-    .then(result => {
-      setData(result)
-    });
-  } 
-  fetchData();
-}, []);
+
+  //fetch data from openweather
+  useEffect(() => {
+    const fetchData =async function (){
+      await fetch(`https://api.openweathermap.org/data/2.5/weather?q=Arusha&appid=93de778a8de80994ecaaee49126e92e9&units=metric`)
+      .then(res => res.json())
+      .then(result => {setData(result)});
+      } 
+    fetchData();
+  }, []);
+
   return (
     <div className="card">
-          <img src={Sunny} className="weather-icon-3" alt="pcloudy"/>
+
+      {data.weather ? data.weather[0].main === 'Clouds' ?  <img src={Pcloudy} className="weather-icon-1" alt="cloudy"/> : null : null}
+      {data.weather ? data.weather[0].main === 'Rain' ?  <img src={Rainy} className="weather-icon-2" alt="Rainy"/> : null : null}
+      {data.weather ? data.weather[0].main === 'Sunny' ?  <img src={Sunny} className="weather-icon-3" alt="Sunny"/> : null : null}
+
             <div className="info-card">
                 <div className="name-temp">
                   <h4>{data.name}</h4>

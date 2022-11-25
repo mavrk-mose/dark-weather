@@ -6,7 +6,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  
+
 }
 
 body {
@@ -18,10 +18,9 @@ body {
   flex-direction: column;
   align-items: center;
   position: relative;
-  width: 100%;
+  width: 100vw;
   max-width: 1440px;
   min-height: 100vh;
-  /* height: 100vh; */
   color: #FFFF;
 }
 h2{

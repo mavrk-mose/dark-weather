@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import moment, { HTML5_FMT } from 'moment';
+import moment from 'moment';
 import Pcloudy from '../assets/pcloudy.svg';
 import Rainy from '../assets/Tshower.svg';
 import Sunny from '../assets/sun.svg';
@@ -19,7 +19,11 @@ useEffect(() => {
 }, []);
   return (
     <div className="card">
-           <img src={Rainy} className="weather-icon-2" alt="pcloudy"/>
+
+          {data.weather ? data.weather[0].main === 'Clouds' ?  <img src={Pcloudy} className="weather-icon-1" alt="cloudy"/> : null : null}
+          {data.weather ? data.weather[0].main === 'Rain' ?  <img src={Rainy} className="weather-icon-2" alt="Rainy"/> : null : null}
+          {data.weather ? data.weather[0].main === 'Sunny' ?  <img src={Sunny} className="weather-icon-3" alt="Sunny"/> : null : null}
+
             <div className="info-card">
                 <div className="name-temp">
                   <h4>{data.name}</h4>
