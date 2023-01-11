@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import moment from 'moment';
 import Pcloudy from '../assets/pcloudy.svg';
 import Rainy from '../assets/Tshower.svg';
@@ -8,14 +8,14 @@ function Arusha() {
   const [data, setData] = useState<any>([]);
 
   //fetch data from openweather
-  useEffect(() => {
+  setInterval(() => {
     const fetchData =async function (){
       await fetch(`https://api.openweathermap.org/data/2.5/weather?q=Arusha&appid=93de778a8de80994ecaaee49126e92e9&units=metric`)
       .then(res => res.json())
       .then(result => {setData(result)});
       } 
     fetchData();
-  }, []);
+  }, 5000);
 
   return (
     <div className="card">

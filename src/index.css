@@ -11,6 +11,7 @@
 
 body {
   background: url('./assets/background.jpeg') no-repeat center center/cover;
+  overflow-x: hidden;
 }
 
 .container{ 
@@ -22,6 +23,7 @@ body {
   max-width: 1440px;
   min-height: 100vh;
   color: #FFFF;
+  
 }
 h2{
   font-size: 2.5em;
@@ -270,7 +272,7 @@ li{
     scroll-behavior: smooth;
   }
   .info-card {
-    margin-top: 5%;
+    padding-top: 75%;
     width: 30em;
     height: 4em;
   }
@@ -302,3 +304,5 @@ li{
   }
   
 }
+
+

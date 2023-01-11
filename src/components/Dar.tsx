@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import moment from 'moment';
 import Pcloudy from '../assets/pcloudy.svg';
 import Rainy from '../assets/Tshower.svg';
@@ -7,7 +7,7 @@ function Dar() {
   const [data, setData] = useState<any>([]);
 
 //fetch data from openweather
-useEffect(() => {
+setInterval(() => {
   const fetchData =async function (){
     await fetch(`https://api.openweathermap.org/data/2.5/weather?q=Dar Es Salaam&appid=93de778a8de80994ecaaee49126e92e9&units=metric`)
     .then(res => res.json())
@@ -16,7 +16,7 @@ useEffect(() => {
     });
   } 
   fetchData();
-}, []);
+}, 5000);
 
   return (
         <div className="card">
@@ -40,5 +40,3 @@ useEffect(() => {
 }
 
 export default Dar
-
-
