@@ -4,9 +4,9 @@ import Arusha from "./components/Arusha";
 import axios from "axios";
 import { useState } from "react";
 import moment from "moment";
-import Pcloudy from '../assets/pcloudy.svg';
-import Rainy from '../assets/Tshower.svg';
-import Sunny from '../assets/sun.svg';
+import Pcloudy from './assets/pcloudy.svg';
+import Rainy from './assets/Tshower.svg';
+import Sunny from './assets/sun.svg';
 import { WeatherData } from "./types";
 function App() {
   //state variables
