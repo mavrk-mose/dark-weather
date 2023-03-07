@@ -7,7 +7,7 @@ import moment from "moment";
 import Pcloudy from '../assets/pcloudy.svg';
 import Rainy from '../assets/Tshower.svg';
 import Sunny from '../assets/sun.svg';
-
+import { WeatherData } from "./types";
 function App() {
   //state variables
   const [city, setCity] = useState("");

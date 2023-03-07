@@ -1,4 +1,6 @@
 //model for WeatherData response
+//model for WeatherData response
+export { type WeatherData };
 interface WeatherData {
     coord: {
       lon: number;
