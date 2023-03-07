@@ -22,8 +22,7 @@ function App() {
   const handleSearch = async (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.code === 'Enter') {
       try {
-        const apiKey = process.env.API_KEY;
-        const response = await axios.get<WeatherData>(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`);
+        const response = await axios.get<WeatherData>(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=93de778a8de80994ecaaee49126e92e9&units=metric`);
         setWeatherData(response.data);
       } catch (error) {
         console.error(error);

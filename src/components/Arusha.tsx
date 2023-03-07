@@ -7,6 +7,10 @@ import { WeatherData } from "../types";
 
 function Arusha() {
   const [data, setData] = useState<WeatherData>();
+  
+  // TODO: fetch data in parent component then pass in data using props
+
+  // TODO: learn better way to fetch data for city without each component having to fetch data individually
 
   //fetch data from openweather
   useEffect(() => {
