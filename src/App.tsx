@@ -8,10 +8,14 @@ import Pcloudy from './assets/pcloudy.svg';
 import Rainy from './assets/Tshower.svg';
 import Sunny from './assets/sun.svg';
 import { WeatherData } from "./types";
+import { List } from "immutable";
+
 function App() {
   //state variables
   const [city, setCity] = useState("");
   const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
+  const [query, setQuery] = useState("");
+  const [results, setResults] = useState<List<WeatherData>>();
 
   //updates the city state variable 
   function handleSearchInputChange(event: React.ChangeEvent<HTMLInputElement>) {
@@ -29,6 +33,23 @@ function App() {
       }
     }   
   };
+
+  //fetches list of cities  
+  const searchCities = async (query: string) => {
+      const response = await axios.get(`https://api.openweathermap.org/data/2.5/find?q=${query}&units=metric&appid=93de778a8de80994ecaaee49126e92e9`);
+      setResults(response.data.list);
+  };
+
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+      const { value } = event.target;
+      setQuery(value);
+      searchCities(value);
+  };
+// TODO: Display not found to user in case server responds with 404
+
+// TODO: look for animated weather icons, have 10 variants
+
+// TODO: show loading state while searching
 
   return (
   <div className="container">
@@ -50,11 +71,16 @@ function App() {
         <div className="search-box">
             <input 
               type="text" 
-              value={city}
-              onChange={handleSearchInputChange}
+              value={query}
+              onChange={handleInputChange}
               onKeyDown={handleSearch}
               maxLength={20} 
               placeholder='Search Here'/>
+            <ul>
+              {results?.map((result) => (
+                <li key={result.id}>{result.name}</li>
+                ))}
+            </ul>
         </div>
         <div className="filter-box">
             <p>Filters</p>
@@ -75,6 +101,11 @@ function App() {
             </select>
         </div>
       </div>
+      <div className="cards">
+          <Dar />
+          <Arusha />
+          <Njombe />
+      </div>   
       {weatherData &&
         <div className="card">
           {weatherData.weather ? weatherData.weather[0].main === 'Clouds' ?  <img src={Pcloudy} className="weather-icon-1" alt="cloudy"/> : null : null}
@@ -92,11 +123,6 @@ function App() {
             </div>
        </div>
       }
-      <div className="cards">
-          <Dar />
-          <Arusha />
-          <Njombe />
-      </div>   
   </div>
   )
 }
