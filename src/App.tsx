@@ -75,11 +75,6 @@ function App() {
             </select>
         </div>
       </div>
-      <div className="cards">
-          <Dar />
-          <Arusha />
-          <Njombe />
-      </div>
       {weatherData &&
         <div className="card">
           {weatherData.weather ? weatherData.weather[0].main === 'Clouds' ?  <img src={Pcloudy} className="weather-icon-1" alt="cloudy"/> : null : null}
@@ -97,7 +92,11 @@ function App() {
             </div>
        </div>
       }
-      
+      <div className="cards">
+          <Dar />
+          <Arusha />
+          <Njombe />
+      </div>   
   </div>
   )
 }
