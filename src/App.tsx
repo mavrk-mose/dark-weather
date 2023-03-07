@@ -1,8 +1,36 @@
 import Dar from "./components/Dar";
 import Njombe from "./components/Njombe";
 import Arusha from "./components/Arusha";
+import axios from "axios";
+import { useState } from "react";
+import moment from "moment";
+import Pcloudy from '../assets/pcloudy.svg';
+import Rainy from '../assets/Tshower.svg';
+import Sunny from '../assets/sun.svg';
 
 function App() {
+  //state variables
+  const [city, setCity] = useState("");
+  const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
+
+  //updates the city state variable 
+  function handleSearchInputChange(event: React.ChangeEvent<HTMLInputElement>) {
+    setCity(event.target.value);
+  }
+  
+  //fetches weather data then sets it to the weather object
+  const handleSearch = async (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.code === 'Enter') {
+      try {
+        const apiKey = process.env.API_KEY;
+        const response = await axios.get<WeatherData>(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`);
+        setWeatherData(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    }   
+  };
+
   return (
   <div className="container">
       <div className="navbar">
@@ -21,7 +49,13 @@ function App() {
       </div>
       <div className="filters">
         <div className="search-box">
-            <input type="text" maxLength={20} placeholder='Search Here'/>
+            <input 
+              type="text" 
+              value={city}
+              onChange={handleSearchInputChange}
+              onKeyDown={handleSearch}
+              maxLength={20} 
+              placeholder='Search Here'/>
         </div>
         <div className="filter-box">
             <p>Filters</p>
@@ -47,6 +81,24 @@ function App() {
           <Arusha />
           <Njombe />
       </div>
+      {weatherData &&
+        <div className="card">
+          {weatherData.weather ? weatherData.weather[0].main === 'Clouds' ?  <img src={Pcloudy} className="weather-icon-1" alt="cloudy"/> : null : null}
+          {weatherData.weather ? weatherData.weather[0].main === 'Rain' ?  <img src={Rainy} className="weather-icon-2" alt="Rainy"/> : null : null}
+          {weatherData.weather ? weatherData.weather[0].main === 'Sunny' ?  <img src={Sunny} className="weather-icon-3" alt="Sunny"/> : null : null}
+
+            <div className="info-card">
+                <div className="name-temp">
+                  <h4>{weatherData.name}</h4>
+                  {weatherData.main ? <h5>{Math.round(weatherData.main.temp)}ºC</h5> : null}
+                </div>
+                {weatherData.wind ? <ul>windspeed : {Math.round(weatherData.wind.speed)}km/h</ul> : null}
+              <ul>{moment().format('dddd')}: {moment().format('HH:mm')}</ul>
+              {weatherData.weather ? <ul>{weatherData?.weather[0].main}</ul> : null} 
+            </div>
+       </div>
+      }
+      
   </div>
   )
 }
