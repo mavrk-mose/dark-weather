@@ -46,6 +46,7 @@ function App() {
       setQuery(value);
       searchCities(value);
   };
+
 // TODO: Display not found to user in case server responds with 404
 
 // TODO: look for animated weather icons, have 10 variants
@@ -107,30 +108,20 @@ function App() {
       </div>   
       {results?.map((result) => (
       <Card 
-        key={result.id} 
-        coord={{
-          lon: 0,
-          lat: 0
-        }} weather={[]} base={""} main={{
-          temp: 0,
-          feels_like: 0,
-          temp_min: 0,
-          temp_max: 0,
-          pressure: 0,
-          humidity: 0,
-          sea_level: 0,
-          grnd_level: 0
-        }} visibility={0} wind={{
-          speed: 0,
-          deg: 0,
-          gust: 0
-        }} clouds={{
-          all: 0
-        }} dt={0} sys={{
-          country: "",
-          sunrise: 0,
-          sunset: 0
-        }} timezone={0} id={0} name={""} cod={0}/>
+          key={result.id}
+          weather={result.weather}
+          main={result.main}
+          name={result.name}
+          wind={result.wind}
+          coord={result.coord}
+          base={result.base}
+          visibility={result.visibility}
+          clouds={result.clouds}
+          dt={result.dt}
+          sys={result.sys}
+          timezone={result.timezone}
+          cod={result.cod} 
+          id={result.id}/>
       ))}
        
       

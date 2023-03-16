@@ -4,9 +4,12 @@ import Rainy from '../assets/Tshower.svg';
 import Sunny from '../assets/sun.svg';
 import { WeatherData } from "../types";
 
-const Card: React.FC<WeatherData> = ({ weather, main, name, wind }) => {
+const Card: React.FC<WeatherData> = ({ weather, main, wind, name }) => {
+  // TODO: fetch data in parent component then pass in data using props
+
   // TODO: learn better way to fetch data for city without each component having to fetch data individually
 
+  //fetch data from openweather
   return (
     <div className="card">
       {weather ? weather[0].main === 'Clouds' ?  <img src={Pcloudy} className="weather-icon-1" alt="cloudy"/> : null : null}
