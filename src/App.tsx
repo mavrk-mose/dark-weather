@@ -4,7 +4,6 @@ import Arusha from "./components/Arusha";
 import axios from "axios";
 import { useState } from "react";
 import { WeatherData } from "./types";
-import { List } from "immutable";
 import Card from "./components/Card";
 import './index.css';
 
@@ -109,7 +108,7 @@ function App() {
         {loading && <div>loading ...</div>}
 
         {!loading && (
-          results?.map((result) => (
+          results?.slice(0,2).map((result) => (
           <Card
             key={result.id}
             weather={result.weather}
