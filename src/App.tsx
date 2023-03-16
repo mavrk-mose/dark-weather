@@ -10,31 +10,10 @@ import './index.css';
 function App() {
 
   //state variables
-  const [city, setCity] = useState("");
-  const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<WeatherData[]>();
-  const loading = results?.length === 0;
+  const loading = results?.length === 0; //sets loading state if results is empty
 
-  //updates the city state variable 
-  function handleSearchInputChange(event: React.ChangeEvent<HTMLInputElement>) {
-    setCity(event.target.value);
-  }
-  
-  //fetches weather data then sets it to the weather object
-  const handleSearch = async (event: React.KeyboardEvent<HTMLInputElement>) => {
-    if (event.code === 'Enter') {
-      try {
-        const changeEvent = new Event ( 'change', {bubbles:true})
-        Object.defineProperty(changeEvent, 'target', { value: event.target });
-        handleSearchInputChange(changeEvent as unknown as React.ChangeEvent<HTMLInputElement>);
-        const response = await axios.get<WeatherData>(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=93de778a8de80994ecaaee49126e92e9&units=metric`);
-        setWeatherData(response.data);
-      } catch (error) {
-        console.error(error);
-      }
-    }   
-  };
 
   //fetches list of cities  
   const searchCities = async (query: string) => {
@@ -78,7 +57,6 @@ function App() {
               type="text"
               value={query}
               onChange={handleInputChange}
-              onKeyDown={handleSearch}
               maxLength={20}
               placeholder='Search Here' />
             <ul>
