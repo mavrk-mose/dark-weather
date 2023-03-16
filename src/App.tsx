@@ -3,14 +3,12 @@ import Njombe from "./components/Njombe";
 import Arusha from "./components/Arusha";
 import axios from "axios";
 import { useState } from "react";
-import moment from "moment";
-import Pcloudy from './assets/pcloudy.svg';
-import Rainy from './assets/Tshower.svg';
-import Sunny from './assets/sun.svg';
 import { WeatherData } from "./types";
 import { List } from "immutable";
+import Card from "./components/Card";
 
 function App() {
+
   //state variables
   const [city, setCity] = useState("");
   const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
@@ -26,6 +24,9 @@ function App() {
   const handleSearch = async (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.code === 'Enter') {
       try {
+        const changeEvent = new Event ( 'change', {bubbles:true})
+        Object.defineProperty(changeEvent, 'target', { value: event.target });
+        handleSearchInputChange(changeEvent as unknown as React.ChangeEvent<HTMLInputElement>);
         const response = await axios.get<WeatherData>(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=93de778a8de80994ecaaee49126e92e9&units=metric`);
         setWeatherData(response.data);
       } catch (error) {
@@ -77,9 +78,7 @@ function App() {
               maxLength={20} 
               placeholder='Search Here'/>
             <ul>
-              {results?.map((result) => (
-                <li key={result.id}>{result.name}</li>
-                ))}
+              
             </ul>
         </div>
         <div className="filter-box">
@@ -102,27 +101,39 @@ function App() {
         </div>
       </div>
       <div className="cards">
-          <Dar />
-          <Arusha />
-          <Njombe />
+        <Dar />
+        <Arusha />
+        <Njombe />
       </div>   
-      {weatherData &&
-        <div className="card">
-          {weatherData.weather ? weatherData.weather[0].main === 'Clouds' ?  <img src={Pcloudy} className="weather-icon-1" alt="cloudy"/> : null : null}
-          {weatherData.weather ? weatherData.weather[0].main === 'Rain' ?  <img src={Rainy} className="weather-icon-2" alt="Rainy"/> : null : null}
-          {weatherData.weather ? weatherData.weather[0].main === 'Sunny' ?  <img src={Sunny} className="weather-icon-3" alt="Sunny"/> : null : null}
-
-            <div className="info-card">
-                <div className="name-temp">
-                  <h4>{weatherData.name}</h4>
-                  {weatherData.main ? <h5>{Math.round(weatherData.main.temp)}ºC</h5> : null}
-                </div>
-                {weatherData.wind ? <ul>windspeed : {Math.round(weatherData.wind.speed)}km/h</ul> : null}
-              <ul>{moment().format('dddd')}: {moment().format('HH:mm')}</ul>
-              {weatherData.weather ? <ul>{weatherData?.weather[0].main}</ul> : null} 
-            </div>
-       </div>
-      }
+      {results?.map((result) => (
+      <Card 
+        key={result.id} 
+        coord={{
+          lon: 0,
+          lat: 0
+        }} weather={[]} base={""} main={{
+          temp: 0,
+          feels_like: 0,
+          temp_min: 0,
+          temp_max: 0,
+          pressure: 0,
+          humidity: 0,
+          sea_level: 0,
+          grnd_level: 0
+        }} visibility={0} wind={{
+          speed: 0,
+          deg: 0,
+          gust: 0
+        }} clouds={{
+          all: 0
+        }} dt={0} sys={{
+          country: "",
+          sunrise: 0,
+          sunset: 0
+        }} timezone={0} id={0} name={""} cod={0}/>
+      ))}
+       
+      
   </div>
   )
 }
