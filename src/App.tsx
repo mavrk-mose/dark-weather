@@ -6,6 +6,7 @@ import { useState } from "react";
 import { WeatherData } from "./types";
 import { List } from "immutable";
 import Card from "./components/Card";
+import './index.css';
 
 function App() {
 
@@ -128,7 +129,7 @@ function App() {
             id={result.id} />
         )))}
       </div>
-      
+
         {!loading && (
           <div className="cards">
             <Dar />
