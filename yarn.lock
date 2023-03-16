@@ -635,11 +635,6 @@ has@^1.0.3:
   dependencies:
     function-bind "^1.1.1"
 
-immutable@^4.2.4:
-  version "4.2.4"
-  resolved "https://registry.npmjs.org/immutable/-/immutable-4.2.4.tgz"
-  integrity sha512-WDxL3Hheb1JkRN3sQkyujNlL/xRjAo3rJtaU5xeufUauG66JdMr32bLj4gF+vWl84DIA3Zxw7tiAjneYzRRw+w==
-
 is-core-module@^2.9.0:
   version "2.10.0"
   resolved "https://registry.npmjs.org/is-core-module/-/is-core-module-2.10.0.tgz"
