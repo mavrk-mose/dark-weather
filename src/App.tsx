@@ -106,23 +106,26 @@ function App() {
         <Arusha />
         <Njombe />
       </div>   
-      {results?.map((result) => (
-      <Card 
-          key={result.id}
-          weather={result.weather}
-          main={result.main}
-          name={result.name}
-          wind={result.wind}
-          coord={result.coord}
-          base={result.base}
-          visibility={result.visibility}
-          clouds={result.clouds}
-          dt={result.dt}
-          sys={result.sys}
-          timezone={result.timezone}
-          cod={result.cod} 
-          id={result.id}/>
-      ))}
+      <div className="cards">
+        {results?.map((result) => (
+          <Card 
+            key={result.id}
+            weather={result.weather}
+            main={result.main}
+            name={result.name}
+            wind={result.wind}
+            coord={result.coord}
+            base={result.base}
+            visibility={result.visibility}
+            clouds={result.clouds}
+            dt={result.dt}
+            sys={result.sys}
+            timezone={result.timezone}
+            cod={result.cod} 
+            id={result.id}/>
+        ))}
+      </div>
+      
        
       
   </div>
