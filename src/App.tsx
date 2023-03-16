@@ -14,8 +14,8 @@ function App() {
   const [city, setCity] = useState("");
   const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
   const [query, setQuery] = useState("");
-  const [results, setResults] = useState<List<WeatherData>>();
-  const [loading, setLoading] = useState(false);
+  const [results, setResults] = useState<WeatherData[]>();
+  const loading = results?.length === 0;
 
   //updates the city state variable 
   function handleSearchInputChange(event: React.ChangeEvent<HTMLInputElement>) {
@@ -39,10 +39,8 @@ function App() {
 
   //fetches list of cities  
   const searchCities = async (query: string) => {
-      setLoading(true); //show empty div
       const response = await axios.get(`https://api.openweathermap.org/data/2.5/find?q=${query}&units=metric&appid=93de778a8de80994ecaaee49126e92e9`);
       setResults(response.data.list);
-      setLoading(false); //hide empty div
   };
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
