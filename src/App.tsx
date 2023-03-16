@@ -102,11 +102,6 @@ function App() {
         </div>
       </div>
       <div className="cards">
-        <Dar />
-        <Arusha />
-        <Njombe />
-      </div>   
-      <div className="cards">
         {results?.map((result) => (
           <Card 
             key={result.id}
@@ -125,9 +120,11 @@ function App() {
             id={result.id}/>
         ))}
       </div>
-      
-       
-      
+      <div className="cards">
+        <Dar />
+        <Arusha />
+        <Njombe />
+      </div>    
   </div>
   )
 }
