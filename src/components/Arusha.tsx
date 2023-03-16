@@ -4,6 +4,7 @@ import Pcloudy from '../assets/pcloudy.svg';
 import Rainy from '../assets/Tshower.svg';
 import Sunny from '../assets/sun.svg';
 import { WeatherData } from "../types";
+import '../index.css';
 
 function Arusha() {
   const [data, setData] = useState<WeatherData>();

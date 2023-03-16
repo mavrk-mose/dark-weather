@@ -4,10 +4,14 @@ import Pcloudy from '../assets/pcloudy.svg';
 import Rainy from '../assets/Tshower.svg';
 import Sunny from '../assets/sun.svg';
 import { WeatherData } from "../types";
+import '../index.css';
+
 function Njombe() {
 
   const [data, setData] = useState<WeatherData>();
+
 //  TODO: remove repetitive code with props
+
 //fetch data from openweather
 useEffect(() => {
   const fetchData =async function (){
