@@ -205,7 +205,9 @@ li{
   font-weight: 100;
 }
 
-
+.hidden {
+  display: none;
+}
 /* tablet styles*/
 @media screen and (max-width: 1000px){
   .navi-bar {

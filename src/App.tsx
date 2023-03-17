@@ -85,25 +85,24 @@ function App() {
 
         {loading && <div>loading ...</div>}
 
-        <div className="cards">
-          {!loading && (
-              results?.slice(0,2).map((result) => (
-                <Card
-                  key={result.id}
-                  weather={result.weather}
-                  main={result.main}
-                  name={result.name}
-                  wind={result.wind}
-                  coord={result.coord}
-                  base={result.base}
-                  visibility={result.visibility}
-                  clouds={result.clouds}
-                  dt={result.dt}
-                  sys={result.sys}
-                  timezone={result.timezone}
-                  cod={result.cod}
-                  id={result.id} />
-          )))}
+        <div className={loading ? "hidden" : "cards"}>
+          {results?.slice(0,2).map((result) => (
+            <Card
+              key={result.id}
+              weather={result.weather}
+              main={result.main}
+              name={result.name}
+              wind={result.wind}
+              coord={result.coord}
+              base={result.base}
+              visibility={result.visibility}
+              clouds={result.clouds}
+              dt={result.dt}
+              sys={result.sys}
+              timezone={result.timezone}
+              cod={result.cod}
+              id={result.id} />
+          ))}
         </div>
       </div>
 
