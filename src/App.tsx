@@ -107,7 +107,7 @@ function App() {
         </div>
       </div>
 
-        {loading && (
+        {!loading && (
           <div className="cards">
             <Dar/>
             <Arusha/>
