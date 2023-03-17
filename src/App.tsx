@@ -12,7 +12,7 @@ function App() {
   //state variables
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<WeatherData[]>();
-  const loading = results?.length === 0; //sets loading state if results is empty
+  const loading = results?.length === 0; //sets loading state if results array is empty
 
 
   //fetches list of cities  
@@ -85,31 +85,33 @@ function App() {
 
         {loading && <div>loading ...</div>}
 
-        {!loading && (
-          results?.slice(0,2).map((result) => (
-          <Card
-            key={result.id}
-            weather={result.weather}
-            main={result.main}
-            name={result.name}
-            wind={result.wind}
-            coord={result.coord}
-            base={result.base}
-            visibility={result.visibility}
-            clouds={result.clouds}
-            dt={result.dt}
-            sys={result.sys}
-            timezone={result.timezone}
-            cod={result.cod}
-            id={result.id} />
-        )))}
+        <div className="cards">
+          {!loading && (
+              results?.slice(0,2).map((result) => (
+                <Card
+                  key={result.id}
+                  weather={result.weather}
+                  main={result.main}
+                  name={result.name}
+                  wind={result.wind}
+                  coord={result.coord}
+                  base={result.base}
+                  visibility={result.visibility}
+                  clouds={result.clouds}
+                  dt={result.dt}
+                  sys={result.sys}
+                  timezone={result.timezone}
+                  cod={result.cod}
+                  id={result.id} />
+          )))}
+        </div>
       </div>
 
-        {!loading && (
+        {loading && (
           <div className="cards">
-            <Dar />
-            <Arusha />
-            <Njombe />
+            <Dar/>
+            <Arusha/>
+            <Njombe/>
           </div>
         )}
     </>    
