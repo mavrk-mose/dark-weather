@@ -84,6 +84,14 @@ function App() {
         </div>
 
         {loading && <div>loading ...</div>}
+       
+        {!loading && (
+          <div className="cards">
+            <Dar/>
+            <Arusha/>
+            <Njombe/>
+          </div>
+        )}
 
         <div className={loading ? "hidden" : "cards"}>
           {results?.slice(0,2).map((result) => (
@@ -107,13 +115,7 @@ function App() {
         </div>
       </div>
 
-        {!loading && (
-          <div className="cards">
-            <Dar/>
-            <Arusha/>
-            <Njombe/>
-          </div>
-        )}
+        
     </>    
   )
 }
