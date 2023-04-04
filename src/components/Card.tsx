@@ -7,7 +7,7 @@ import showerRain from '../assets/09d.svg';
 import rain from '../assets/10d.svg';
 import thunderstorm from '../assets/11d.svg';
 import snow from '../assets/13d.svg';
-import mist from ' ../assets/50d.svg'
+import mist from '../assets/50d.svg'
 
 import { WeatherData } from "../types";
 
