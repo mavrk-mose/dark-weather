@@ -89,6 +89,7 @@ function App() {
           {results?.slice(0,2).map((result) => (
             <Card
               key={result.id}
+              
               weather={result.weather}
               main={result.main}
               name={result.name}
