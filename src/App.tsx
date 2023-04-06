@@ -77,7 +77,7 @@ function App() {
           </div>
         </div>
 
-        {loading && <img src={loadingIcon} className="weather-icon-2"/>}
+        {loading && <img src={loadingIcon}/>}
        
         {!loading && (
           <div className="cards">
