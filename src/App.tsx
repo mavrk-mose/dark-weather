@@ -29,8 +29,6 @@ function App() {
 
 // TODO: Display not found to user in case server responds with 404
 
-// TODO: show loading state while searching, ideally an animated loading icon
-
   return (
   <>
     <div className="container">
@@ -86,7 +84,7 @@ function App() {
             <Njombe/>
           </div>
         )}
-
+      
         <div className={loading ? "hidden" : "cards"}>
           {results?.slice(0,2).map((result) => (
             <Card
