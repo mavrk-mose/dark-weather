@@ -5,6 +5,7 @@ import axios from "axios";
 import { useState } from "react";
 import { WeatherData } from "./types";
 import Card from "./components/Card";
+import loading from "./assets/loading.svg";
 import './index.css';
 
 function App() {
@@ -13,7 +14,6 @@ function App() {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<WeatherData[]>();
   const loading = results?.length === 0; //sets loading state if results array is empty
-
 
   //fetches list of cities  
   const searchCities = async (query: string) => {
@@ -29,12 +29,9 @@ function App() {
 
 // TODO: Display not found to user in case server responds with 404
 
-// TODO: look for animated weather icons, have 10 variants
-
-// TODO: show loading state while searching, ideally an animated laoding icon
+// TODO: show loading state while searching, ideally an animated loading icon
 
   return (
-
   <>
     <div className="container">
         <div className="navbar">
@@ -59,9 +56,6 @@ function App() {
               onChange={handleInputChange}
               maxLength={20}
               placeholder='Search Here' />
-            <ul>
-
-            </ul>
           </div>
           <div className="filter-box">
             <p>Filters</p>
@@ -83,7 +77,7 @@ function App() {
           </div>
         </div>
 
-        {loading && <div>loading ...</div>}
+        {loading && <div className="weather-icon-2">{loading}</div>}
        
         {!loading && (
           <div className="cards">
@@ -97,7 +91,6 @@ function App() {
           {results?.slice(0,2).map((result) => (
             <Card
               key={result.id}
-              
               weather={result.weather}
               main={result.main}
               name={result.name}
@@ -113,10 +106,8 @@ function App() {
               id={result.id} />
           ))}
         </div>
-      </div>
-
-        
-    </>    
+      </div>   
+   </>    
   )
 }
 
