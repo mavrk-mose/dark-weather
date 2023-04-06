@@ -181,7 +181,6 @@ input:focus{
   position: relative;
   width: 15em;
   height: 15em;
-  left: 50%;
   padding-top: 10%;
 }
 .info-card {
