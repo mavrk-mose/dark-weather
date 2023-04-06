@@ -178,7 +178,7 @@ input:focus{
   top: -9%;
 }
 .loading-icon{
-  position: absolute;
+  position: relative;
   width: 15em;
   height: 15em;
   left: 50%;
