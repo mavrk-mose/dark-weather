@@ -177,6 +177,13 @@ input:focus{
   left: 45%;
   top: -9%;
 }
+.loading-icon{
+  position: absolute;
+  width: 15em;
+  height: 15em;
+  left: 50%;
+  padding-top: 10%;
+}
 .info-card {
   display: flex;
   flex-direction: column;
