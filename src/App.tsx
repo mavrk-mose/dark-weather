@@ -5,7 +5,7 @@ import axios from "axios";
 import { useState } from "react";
 import { WeatherData } from "./types";
 import Card from "./components/Card";
-import loading from "./assets/loading.svg";
+import loadingIcon from "./assets/loading.svg";
 import './index.css';
 
 function App() {
@@ -77,7 +77,7 @@ function App() {
           </div>
         </div>
 
-        {loading && <div>{loading}</div>}
+        {loading &&  <img src={loadingIcon} className="weather-icon-2"/>}
        
         {!loading && (
           <div className="cards">
