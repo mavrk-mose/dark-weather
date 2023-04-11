@@ -1,30 +1,44 @@
-import Dar from "./components/Dar";
-import Njombe from "./components/Njombe";
-import Arusha from "./components/Arusha";
 import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { WeatherData } from "./types";
 import Card from "./components/Card";
 import loadingIcon from "./assets/loading.svg";
 import './index.css';
+import City from "./components/City";
+
+const TEST_CITIES = ["Dar","Arusha","Mwanza"];
 
 function App() {
 
   //state variables
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<WeatherData[]>();
-  const loading = results?.length === 0; //sets loading state if results array is empty
+  const [loading, setLoading] = useState(false);
 
-  //fetches list of cities  
-  const searchCities = async (query: string) => {
-      const response = await axios.get(`https://api.openweathermap.org/data/2.5/find?q=${query}&units=metric&appid=93de778a8de80994ecaaee49126e92e9`);
-      setResults(response.data.list);
-  };
+  useEffect(()=>{
+    if(!query || query.length < 3){
+      setResults([]);
+      return
+    }
+
+    const searchCities = async () => {
+      try{
+        setLoading(true)
+        const response = await axios.get(`https://api.openweathermap.org/data/2.5/find?q=${query}&units=metric&appid=93de778a8de80994ecaaee49126e92e9`);
+        setResults(response.data.list);
+      }catch(e){
+        console.log(e)
+      }finally{
+        setLoading(false)
+      }
+    };
+
+    searchCities();
+  },[query])
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
       const { value } = event.target;
       setQuery(value);
-      searchCities(value);
   };
 
 // TODO: Display not found to user in case server responds with 404
@@ -76,32 +90,17 @@ function App() {
         </div>
 
         {loading && <img src={loadingIcon} className="loading-icon"/>}
-       
-        {!loading && (
           <div className="cards">
-            <Dar/>
-            <Arusha/>
-            <Njombe/>
+            {
+              TEST_CITIES.map(city => {
+                return <City key={city} name={city}/>
+              })
+            }
           </div>
-        )}
       
         <div className={loading ? "hidden" : "cards"}>
           {results?.slice(0,2).map((result) => (
-            <Card
-              key={result.id}
-              weather={result.weather}
-              main={result.main}
-              name={result.name}
-              wind={result.wind}
-              coord={result.coord}
-              base={result.base}
-              visibility={result.visibility}
-              clouds={result.clouds}
-              dt={result.dt}
-              sys={result.sys}
-              timezone={result.timezone}
-              cod={result.cod}
-              id={result.id} />
+            <Card key={result.id} {...result} />
           ))}
         </div>
       </div>   
