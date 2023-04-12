@@ -18,7 +18,6 @@ SOURCES.set("Snow", snow)
 SOURCES.set("Thunderstorm", thunderstorm)
 SOURCES.set("Drizzle", showerRain)
 
-
 const Card: React.FC<WeatherData> = ({ weather, main, wind, name }) => {
 
   const {src, className} = useMemo(()=>{
@@ -43,7 +42,7 @@ const Card: React.FC<WeatherData> = ({ weather, main, wind, name }) => {
           <h4>{name}</h4>
           {main ? <h5>{Math.round(main.temp)}ºC</h5> : null}
         </div>
-        {wind ? <ul>windspeed : {Math.round(wind.speed)}km/h</ul> : null}
+        {wind ? <ul>windspeed : {Math.round(wind.speed)} km/h</ul> : null}
         <ul>{moment().format('dddd')}: {moment().format('HH:mm')}</ul>
         {weather ? <ul>{weather[0].main}</ul> : null} 
       </div>

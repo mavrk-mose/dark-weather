@@ -8,7 +8,7 @@ interface Props {
   name:string
 }
 
-function City({name}:Props) {
+function City ({name}:Props): JSX.Element {
 
   const [data, setData] = useState<WeatherData|null>(null);
   const [loading, setLoading] = useState(false);
@@ -28,12 +28,14 @@ function City({name}:Props) {
     fetchData();
   }, [name]);
 
-  if(!data){
-    return loading;
+  if (loading) {
+    return <div>loading...</div>;
   }
-  return (
-    <Card {...data}/>
-  )
+  if(!data){
+    return  <div>no data found</div>;
+  }
+  return <Card {...data}/>;
+  
 }
 
 export default React.memo(City)

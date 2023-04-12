@@ -37,8 +37,8 @@ function App() {
   },[query])
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-      const { value } = event.target;
-      setQuery(value);
+    const { value } = event.target;
+    setQuery(value);
   };
 
 // TODO: Display not found to user in case server responds with 404
