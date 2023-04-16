@@ -6,7 +6,7 @@ import loadingIcon from "./assets/loading.svg";
 import './index.css';
 import City from "./components/City";
 
-const TEST_CITIES = ["Dar","Arusha","Mwanza"];
+const TEST_CITIES = ["Dar Es Salaam","Arusha","Iringa"];
 
 function App() {
 
