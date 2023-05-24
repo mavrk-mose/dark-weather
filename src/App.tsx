@@ -6,7 +6,7 @@ import loadingIcon from "./assets/loading.svg";
 import './index.css';
 import City from "./components/City";
 
-const TEST_CITIES = ["Dar Es Salaam","Arusha","Iringa"];
+const cities = ["Dar Es Salaam","Arusha","Iringa"];
 
 function App() {
 
@@ -92,7 +92,7 @@ function App() {
         {loading && <img src={loadingIcon} className="loading-icon"/>}
           <div className="cards">
             {
-              TEST_CITIES.map(city => {
+              cities.map(city => {
                 return <City key={city} name={city}/>
               })
             }
